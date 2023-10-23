@@ -45,3 +45,26 @@ function clearAttribute(attributeCode, doNotClearOnInit, isDictionary) {
   }
   EdocsApi.setAttributeValue(attribute);
 }
+
+function formattingOfInitials(fullName) {
+  //Мельник Ігор Сергійович повертає у форматі "Ігор МЕЛЬНИК"
+  debugger;
+  if (fullName) {
+    var arrFullName = fullName.split(" ");
+    var arrFullNameRectified = [];
+    var arrNew = [];
+
+    for (let index = 0; index < arrFullName.length; index++) {
+      if (arrFullName[index] != "") {
+        arrFullNameRectified.push(arrFullName[index]);
+      }
+    }
+    arrFullNameRectified[1] &&
+      arrNew.push(
+        arrFullNameRectified[1]?.slice(0, 1).toUpperCase() +
+          arrFullNameRectified[1]?.slice(1).toLowerCase()
+      );
+    arrNew.push(arrFullNameRectified[0].toUpperCase());
+    return arrNew.join(" ");
+  } else return "";
+}
