@@ -68,3 +68,5 @@ function formattingOfInitials(fullName) {
     return arrNew.join(" ");
   } else return "";
 }
+
+//
